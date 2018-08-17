@@ -1,6 +1,7 @@
 ﻿
 namespace Sales.Domain.Models
 {
+    using Sales.Common.Models;
     using System.Data.Entity;
     public class DataContext : DbContext
     {
@@ -8,8 +9,8 @@ namespace Sales.Domain.Models
         {
         }
 
-        public System.Data.Entity.DbSet<Sales.Common.Models.Product> Products { get; set; }
+        public DbSet<Product> Products { get; set; }
 
-        // public System.Data.Entity.DbSet<Sales.Common.Models.Product> Products { get; set; }
+        
     }
 }
