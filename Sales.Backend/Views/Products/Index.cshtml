@@ -7,12 +7,19 @@
 <h2>Index</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+   
+    <a href="@Url.Action("Create","Products")" class="btn btn-default"> <i class="glyphicon glyphicon-plus"></i>&nbsp; Create New</a>
 </p>
 <table class="table">
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.Description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Remarks)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ImagePath)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Price)
@@ -32,6 +39,15 @@
             @Html.DisplayFor(modelItem => item.Description)
         </td>
         <td>
+            @Html.DisplayFor(modelItem => item.Remarks)
+        </td>
+        <td>
+            @if (!string.IsNullOrEmpty(item.ImagePath))
+            {
+                <img src="@Url.Content(item.ImagePath)" alt="Image" style="width:100px;height:150px;max-width: 100%; height: auto;" />
+            }
+        </td>
+        <td>
             @Html.DisplayFor(modelItem => item.Price)
         </td>
         <td>
@@ -41,9 +57,10 @@
             @Html.DisplayFor(modelItem => item.PublishOn)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.ProductId }) |
-            @Html.ActionLink("Details", "Details", new { id=item.ProductId }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.ProductId })
+            <a href="@Url.Action("Edit","Products", new {id = item.ProductId })" class="btn btn-default"><i class="glyphicon glyphicon-pencil"></i> Edit</a>
+            <a href="@Url.Action("Details","Products", new {id = item.ProductId })" class="btn btn-default"><i class="glyphicon glyphicon-search"></i> Details</a>
+            <a href="@Url.Action("Delete","Products", new {id = item.ProductId })" class="btn btn-default"><i class="glyphicon glyphicon-trash"></i> Delete</a>
+
         </td>
     </tr>
 }
