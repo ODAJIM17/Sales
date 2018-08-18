@@ -6,38 +6,48 @@
              BindingContext="{Binding Main, Source={StaticResource Locator}}"
              Title="{i18n:Translate Products}">
     <ContentPage.Content>
-        <StackLayout
+        <ScrollView>
+            <StackLayout
             BindingContext="{Binding Products}"
-            Padding="20">
-            <ListView
+            Padding="5">
+                <ListView
                 HasUnevenRows="True"
                 IsRefreshing="{Binding IsRefreshing}"
                 IsPullToRefreshEnabled="True"
                 ItemsSource="{Binding Products}"
                 RefreshCommand="{Binding RefreshCommand}">
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <ViewCell>
-                            <Grid>
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="2*"/>
-                                    <ColumnDefinition Width="*"/>
-                                </Grid.ColumnDefinitions>
-                                <Label
-                                    FontAttributes="Bold"
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="2*"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Image
                                     Grid.Column="0"
-                                    Text="{Binding Description}">
-                                </Label>
-                                <Label
+                                    WidthRequest="100"
+                                    Source="{Binding ImageFullPath}">
+                                    </Image>
+                                    <Label
+                                    FontAttributes="Bold"
                                     Grid.Column="1"
+                                    Text="{Binding Description}"
+                                    VerticalOptions="Center">
+                                    </Label>
+                                    <Label
+                                    Grid.Column="2"
                                     HorizontalOptions="End"
-                                     Text="{Binding Price, StringFormat='{0:C}'}">
-                                </Label>
-                            </Grid>
-                        </ViewCell>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
-        </StackLayout>
+                                     Text="{Binding Price, StringFormat='{0:C2}'}"
+                                    VerticalOptions="Center">
+                                    </Label>
+                                </Grid>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>
