@@ -29,6 +29,21 @@ namespace Sales.Common.Models
         [DataType(DataType.Date)]
         public DateTime PublishOn { get; set; }
 
+
+        public string ImageFullPath
+        {
+            get
+            {
+                if (string.IsNullOrEmpty(this.ImagePath))
+                {
+                    return "noproduct";
+                }
+
+                return $"https://salesbackend.azurewebsites.net/{this.ImagePath.Substring(1)}";
+            }
+
+        }
+
         public override string ToString()
         {
             return string.Format("{0}", this.Description);
