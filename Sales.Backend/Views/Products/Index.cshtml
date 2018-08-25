@@ -57,9 +57,9 @@
             @Html.DisplayFor(modelItem => item.PublishOn)
         </td>
         <td>
-            <a href="@Url.Action("Edit","Products", new {id = item.ProductId })" class="btn btn-default"><i class="glyphicon glyphicon-pencil"></i> Edit</a>
-            <a href="@Url.Action("Details","Products", new {id = item.ProductId })" class="btn btn-default"><i class="glyphicon glyphicon-search"></i> Details</a>
-            <a href="@Url.Action("Delete","Products", new {id = item.ProductId })" class="btn btn-default"><i class="glyphicon glyphicon-trash"></i> Delete</a>
+            <a href="@Url.Action("Edit","Products", new {id = item.ProductId })" class="btn btn-default"><i class="glyphicon glyphicon-pencil"></i> </a>
+            <a href="@Url.Action("Details","Products", new {id = item.ProductId })" class="btn btn-default"><i class="glyphicon glyphicon-search"></i></a>
+            <a href="@Url.Action("Delete","Products", new {id = item.ProductId })" class="btn btn-danger"><i class="glyphicon glyphicon-trash"></i></a>
 
         </td>
     </tr>

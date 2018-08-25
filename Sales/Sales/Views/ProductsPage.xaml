@@ -5,6 +5,9 @@
             x:Class="Sales.Views.ProductsPage"
              BindingContext="{Binding Main, Source={StaticResource Locator}}"
              Title="{i18n:Translate Products}">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Icon="ic_action_add_circle" Command="{Binding AddProductCommand}"/>
+    </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <ScrollView>
             <StackLayout
@@ -22,24 +25,29 @@
                                 <Grid>
                                     <Grid.ColumnDefinitions>
                                         <ColumnDefinition Width="Auto"/>
-                                        <ColumnDefinition Width="2*"/>
                                         <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="Auto"/>
                                     </Grid.ColumnDefinitions>
                                     <Image
                                     Grid.Column="0"
-                                    WidthRequest="100"
-                                    Source="{Binding ImageFullPath}">
+                                    Source="{Binding ImageFullPath}"
+                                    WidthRequest="100">
                                     </Image>
-                                    <Label
-                                    FontAttributes="Bold"
+                                    <StackLayout
                                     Grid.Column="1"
-                                    Text="{Binding Description}"
                                     VerticalOptions="Center">
-                                    </Label>
+                                        <Label
+                                        FontAttributes="Bold"
+                                        Text="{Binding Description}">
+                                        </Label>
+                                        <Label
+                                        Text="{Binding Remarks}">
+                                        </Label>
+                                    </StackLayout>
                                     <Label
                                     Grid.Column="2"
                                     HorizontalOptions="End"
-                                     Text="{Binding Price, StringFormat='{0:C2}'}"
+                                    Text="{Binding Price, StringFormat='{0:C2}'}"
                                     VerticalOptions="Center">
                                     </Label>
                                 </Grid>
