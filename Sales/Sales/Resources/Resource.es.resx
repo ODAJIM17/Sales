@@ -156,4 +156,10 @@
   <data name="Remarks" xml:space="preserve">
     <value>Notas</value>
   </data>
+  <data name="DescriptionErrror" xml:space="preserve">
+    <value>Descripción del producto es requerido.</value>
+  </data>
+  <data name="PriceError" xml:space="preserve">
+    <value>El precio del producto debe ser mayor que 0!</value>
+  </data>
 </root>

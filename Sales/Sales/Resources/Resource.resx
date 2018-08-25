@@ -156,4 +156,10 @@
   <data name="Save" xml:space="preserve">
     <value>Save</value>
   </data>
+  <data name="DescriptionErrror" xml:space="preserve">
+    <value>Product description is required</value>
+  </data>
+  <data name="PriceError" xml:space="preserve">
+    <value>Product price must be greater than 0 </value>
+  </data>
 </root>

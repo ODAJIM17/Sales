@@ -97,6 +97,15 @@ namespace Sales.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Product description is required.
+        /// </summary>
+        public static string DescriptionErrror {
+            get {
+                return ResourceManager.GetString("DescriptionErrror", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Enter product name.
         /// </summary>
         public static string DescriptionPlaceholder {
@@ -138,6 +147,15 @@ namespace Sales.Resources {
         public static string Price {
             get {
                 return ResourceManager.GetString("Price", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Product price must be greater than 0 .
+        /// </summary>
+        public static string PriceError {
+            get {
+                return ResourceManager.GetString("PriceError", resourceCulture);
             }
         }
         

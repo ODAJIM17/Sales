@@ -22,7 +22,7 @@ namespace Sales.API.Controllers
         // GET: api/Products
         public IQueryable<Product> GetProducts()
         {
-            return db.Products;
+            return db.Products.OrderBy(d => d.Description.ToList());
         }
 
         // GET: api/Products/5
@@ -77,6 +77,9 @@ namespace Sales.API.Controllers
         [ResponseType(typeof(Product))]
         public async Task<IHttpActionResult> PostProduct(Product product)
         {
+            product.IsAvailable = true;
+            product.PublishOn = DateTime.Now.ToUniversalTime();
+
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
