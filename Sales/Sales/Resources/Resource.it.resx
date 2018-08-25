@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -117,43 +117,4 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Accept" xml:space="preserve">
-    <value>Aceptar</value>
-  </data>
-  <data name="Error" xml:space="preserve">
-    <value>Error</value>
-  </data>
-  <data name="InternetSettings" xml:space="preserve">
-    <value>Por favor encienda su configuracion de internet</value>
-  </data>
-  <data name="NoInternet" xml:space="preserve">
-    <value>Sin acceso a internet</value>
-  </data>
-  <data name="Products" xml:space="preserve">
-    <value>Productos</value>
-  </data>
-  <data name="AddProduct" xml:space="preserve">
-    <value>Agregar producto</value>
-  </data>
-  <data name="Description" xml:space="preserve">
-    <value>Descripción</value>
-  </data>
-  <data name="DescriptionPlaceholder" xml:space="preserve">
-    <value>Escribir nombre de producto</value>
-  </data>
-  <data name="Price" xml:space="preserve">
-    <value>Precio</value>
-  </data>
-  <data name="PricePlaceholder" xml:space="preserve">
-    <value>Ingrese precio del producto</value>
-  </data>
-  <data name="ChangeImage" xml:space="preserve">
-    <value>Cambiar imagen</value>
-  </data>
-  <data name="Save" xml:space="preserve">
-    <value>Guardar</value>
-  </data>
-  <data name="Remarks" xml:space="preserve">
-    <value>Notas</value>
-  </data>
 </root>
