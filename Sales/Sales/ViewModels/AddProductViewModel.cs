@@ -11,7 +11,7 @@ namespace Sales.ViewModels
     public class AddProductViewModel : BaseViewModel
     {
 
-        #region Atttibutes
+        #region Attributes
         private ApiService apiService;
         public bool isRunning;
         public bool isEnabled;
@@ -118,11 +118,11 @@ namespace Sales.ViewModels
 
 
             var url = Application.Current.Resources["UrlAPI"].ToString();
-            //var prefix = Application.Current.Resources["UrlPrefix"].ToString();
-            //var controller = Application.Current.Resources["UrlProductsController"].ToString();
-            //var response = await this.apiService.Post(url, prefix, controller, product);
+            var prefix = Application.Current.Resources["UrlPrefix"].ToString();
+            var controller = Application.Current.Resources["UrlProductsController"].ToString();
+            var response = await this.apiService.Post(url, prefix, controller, product);
 
-            var response = await this.apiService.Post(url, "/api", "/Products", product);
+            // var response = await this.apiService.Post(url, "/api", "/Products", product);
 
             if (!response.IsSuccess)
             {
