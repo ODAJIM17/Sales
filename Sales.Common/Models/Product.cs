@@ -4,6 +4,8 @@ namespace Sales.Common.Models
 {
     using System;
     using System.ComponentModel.DataAnnotations;
+    using System.ComponentModel.DataAnnotations.Schema;
+
     public class Product
     {
         [Key]
@@ -29,7 +31,8 @@ namespace Sales.Common.Models
         [DataType(DataType.Date)]
         public DateTime PublishOn { get; set; }
 
-
+        [NotMapped]
+        public byte[] ImageArray { get; set; }
         public string ImageFullPath
         {
             get

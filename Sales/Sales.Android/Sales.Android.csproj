@@ -106,7 +106,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\noproduct.png" />
+    <AndroidResource Include="Resources\drawable\noproduct1.png" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\ic_action_add_circle1.png" />
@@ -125,6 +125,9 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\xml\file_paths.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\noproduct.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
 </Project>
