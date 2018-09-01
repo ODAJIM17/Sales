@@ -167,11 +167,18 @@ namespace Sales.ViewModels
                 return;
             }
 
+            byte[] imageArray = null;
+            if (this.file != null)
+            {
+                imageArray = FilesHelper.ReadFully(this.file.GetStream());
+            }
+
             var product = new Product
             {
                 Description = this.Description,
                 Price = price,
                 Remarks = this.Remarks,
+                ImageArray = imageArray,
             };
 
             //var apiSecurity = Application.Current.Resources["APISecurity"].ToString();
