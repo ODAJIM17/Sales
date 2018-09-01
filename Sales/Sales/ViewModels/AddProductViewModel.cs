@@ -6,12 +6,14 @@ namespace Sales.ViewModels
     using Sales.Common.Models;
     using Sales.Helpers;
     using Sales.Services;
+    using System.Linq;
     using System.Windows.Input;
     using Xamarin.Forms;
     public class AddProductViewModel : BaseViewModel
     {
 
         #region Attributes
+        private ImageSource imageSource;
         private ApiService apiService;
         public bool isRunning;
         public bool isEnabled;
@@ -33,6 +35,12 @@ namespace Sales.ViewModels
             set { SetValue(ref this.isEnabled, value); }
         }
 
+        public ImageSource ImageSource
+        {
+            get { return this.imageSource; }
+            set { this.SetValue(ref this.imageSource, value); }
+        }
+
         #endregion
 
         #region Construtors
@@ -41,6 +49,7 @@ namespace Sales.ViewModels
         {
             this.apiService = new ApiService();
             this.IsEnabled = true;
+            this.ImageSource = "noproduct";
 
         }
 
@@ -122,6 +131,8 @@ namespace Sales.ViewModels
             var controller = Application.Current.Resources["UrlProductsController"].ToString();
             var response = await this.apiService.Post(url, prefix, controller, product);
 
+            // the code below also works when adding a new product. just uncomment the url  and the response vars.
+            // var url = Application.Current.Resources["UrlAPI"].ToString();
             // var response = await this.apiService.Post(url, "/api", "/Products", product);
 
             if (!response.IsSuccess)

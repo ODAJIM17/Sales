@@ -1,5 +1,4 @@
 ﻿
-
 namespace Sales.Services
 {
     using Newtonsoft.Json;
