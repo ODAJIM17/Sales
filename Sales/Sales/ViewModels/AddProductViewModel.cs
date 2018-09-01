@@ -3,6 +3,7 @@
 namespace Sales.ViewModels
 {
     using GalaSoft.MvvmLight.Command;
+    using Plugin.Media.Abstractions;
     using Sales.Common.Models;
     using Sales.Helpers;
     using Sales.Services;
@@ -13,6 +14,7 @@ namespace Sales.ViewModels
     {
 
         #region Attributes
+        private MediaFile file;
         private ImageSource imageSource;
         private ApiService apiService;
         public bool isRunning;

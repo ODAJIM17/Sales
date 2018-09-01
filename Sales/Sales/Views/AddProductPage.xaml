@@ -11,7 +11,7 @@
             <StackLayout
                 Padding="5">
                 <Image
-                    Source="noproduct"
+                    Source="{Binding ImageSource}"
                     WidthRequest="100"
                     HeightRequest="100">
                 </Image>

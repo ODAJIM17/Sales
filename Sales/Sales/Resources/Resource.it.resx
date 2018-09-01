@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -117,4 +117,61 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Accept" xml:space="preserve">
+    <value>Accetta</value>
+  </data>
+  <data name="Error" xml:space="preserve">
+    <value>Errore</value>
+  </data>
+  <data name="InternetSettings" xml:space="preserve">
+    <value>Controlla la tua connessione Internet.</value>
+  </data>
+  <data name="NoInternet" xml:space="preserve">
+    <value>Accesso a Internet non disponibile</value>
+  </data>
+  <data name="Products" xml:space="preserve">
+    <value>Prodotti</value>
+  </data>
+  <data name="AddProduct" xml:space="preserve">
+    <value>Aggiungi prodotto</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>Descrizione</value>
+  </data>
+  <data name="DescriptionPlaceholder" xml:space="preserve">
+    <value>Immettere il nome del prodotto</value>
+  </data>
+  <data name="Price" xml:space="preserve">
+    <value>Prezzo</value>
+  </data>
+  <data name="PricePlaceholder" xml:space="preserve">
+    <value>Inserisci il Prezzo del prodotto.</value>
+  </data>
+  <data name="Remarks" xml:space="preserve">
+    <value>Note</value>
+  </data>
+  <data name="ChangeImage" xml:space="preserve">
+    <value>Cambia immagine.</value>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>Salva</value>
+  </data>
+  <data name="DescriptionErrror" xml:space="preserve">
+    <value>La descrizione del prodotto è obbligatoria!</value>
+  </data>
+  <data name="PriceError" xml:space="preserve">
+    <value>Il prezzo deve essere maggiore di</value>
+  </data>
+  <data name="ImageSource" xml:space="preserve">
+    <value>Da dove prendi l&amp;#39;immagine ?!</value>
+  </data>
+  <data name="FromGallery" xml:space="preserve">
+    <value>Da raccolta</value>
+  </data>
+  <data name="NewPicture" xml:space="preserve">
+    <value>Scatta una nuova foto</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>Annulla</value>
+  </data>
 </root>
