@@ -208,7 +208,17 @@ namespace Sales.ViewModels
 
             var newProduct = (Product)response.Result;
             var productsViewModel = ProductsViewModel.GetInstance();
-            productsViewModel.Products.Add(newProduct);
+            productsViewModel.Products.Add(new ProductItemViewModel
+            {
+                Description = newProduct.Description,
+                ImageArray = newProduct.ImageArray,
+                ImagePath = newProduct.ImagePath,
+                IsAvailable = newProduct.IsAvailable,
+                Price = newProduct.Price,
+                ProductId = newProduct.ProductId,
+                PublishOn = newProduct.PublishOn,
+                Remarks = newProduct.Remarks,
+            });
 
             this.IsEnabled = true;
             this.IsRunning = false;

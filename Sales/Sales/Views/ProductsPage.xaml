@@ -22,6 +22,10 @@
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell>
+                                <ViewCell.ContextActions>
+                                    <MenuItem Text="Edit" Command="{Binding EditProductCommand}"/>
+                                    <MenuItem Text="Delete" Command="{Binding DeleteProductCommand}" IsDestructive="True"/>
+                                </ViewCell.ContextActions>
                                 <Grid>
                                     <Grid.ColumnDefinitions>
                                         <ColumnDefinition Width="Auto"/>

@@ -174,4 +174,22 @@
   <data name="Cancel" xml:space="preserve">
     <value>Cancelar</value>
   </data>
+  <data name="Edit" xml:space="preserve">
+    <value>Edición</value>
+  </data>
+  <data name="Delete" xml:space="preserve">
+    <value>Eliminar</value>
+  </data>
+  <data name="DeleteConfirmation" xml:space="preserve">
+    <value>¿Está seguro de que desea eliminar este artículo?</value>
+  </data>
+  <data name="Yes" xml:space="preserve">
+    <value>¡Sí!</value>
+  </data>
+  <data name="No" xml:space="preserve">
+    <value>No.</value>
+  </data>
+  <data name="Confirm" xml:space="preserve">
+    <value>¡Confirmar!</value>
+  </data>
 </root>
