@@ -31,6 +31,7 @@
                                     <Image
                                     Grid.Column="0"
                                     Source="{Binding ImageFullPath}"
+                                    HeightRequest="100"
                                     WidthRequest="100">
                                     </Image>
                                     <StackLayout

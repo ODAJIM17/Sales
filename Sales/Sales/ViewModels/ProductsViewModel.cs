@@ -95,7 +95,10 @@ namespace Sales.ViewModels
             var list = (List<Product>)response.Result;
             this.Products = new ObservableCollection<Product>(list);
             this.IsRefreshing = false;
+
+            
         }
+
 
         #endregion
 

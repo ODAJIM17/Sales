@@ -10,7 +10,8 @@
             BindingContext="{Binding AddProduct}">
             <StackLayout
                 Padding="5">
-                <Image
+                <Image WidthRequest="100"
+                       HeightRequest="100"
                     Source="{Binding ImageSource}">
                     <Image.GestureRecognizers>
                         <TapGestureRecognizer Command="{Binding ChangeImageCommand}"/>
