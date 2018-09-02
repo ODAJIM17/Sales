@@ -53,7 +53,7 @@ namespace Sales.ViewModels
         {
             this.apiService = new ApiService();
             this.IsEnabled = true;
-            this.ImageSource = "noproduct";
+            this.ImageSource = "noproduct.png";
 
         }
 
@@ -108,7 +108,7 @@ namespace Sales.ViewModels
             {
                 this.ImageSource = ImageSource.FromStream(() =>
                 {
-                    var stream = file.GetStream();
+                    var stream = this.file.GetStream();
                     return stream;
                 });
             }
