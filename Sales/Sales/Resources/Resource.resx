@@ -198,7 +198,7 @@
   <data name="IsAvailable" xml:space="preserve">
     <value>Is Available?</value>
   </data>
-<data name="Search" xml:space="preserve">
+  <data name="Search" xml:space="preserve">
     <value>Search...</value>
   </data>
   <data name="Login" xml:space="preserve">
@@ -220,13 +220,13 @@
     <value>Remember me</value>
   </data>
   <data name="Forgot" xml:space="preserve">
-    <value>Do you forgot your password?</value>
+    <value>Forgot your password?</value>
   </data>
   <data name="Register" xml:space="preserve">
     <value>New user</value>
   </data>
   <data name="EmailValidation" xml:space="preserve">
-    <value>You must enter your email.</value>
+    <value>Email is required.</value>
   </data>
   <data name="PasswordValidation" xml:space="preserve">
     <value>You must enter your password.</value>

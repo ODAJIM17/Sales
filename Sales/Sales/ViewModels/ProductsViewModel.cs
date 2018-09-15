@@ -19,11 +19,21 @@ namespace Sales.ViewModels
         private ApiService apiService;
         private ObservableCollection<ProductItemViewModel> products;
         private bool isRefreshing;
+        private string filter;
 
         #endregion
 
         #region Properties
 
+        public string Filter
+        {
+            get { return this.filter; }
+            set
+            {
+                this.filter = value;
+                this.RefreshList();
+            }
+        }
         public bool IsRefreshing
         {
             get { return this.isRefreshing; }
@@ -106,29 +116,55 @@ namespace Sales.ViewModels
 
         public void RefreshList()
         {
-            var myListProductItemViewModel = MyProducts.Select(p => new ProductItemViewModel
-
+            
+               if (string.IsNullOrEmpty(this.Filter))
             {
-                Description = p.Description,
-                ImageArray = p.ImageArray,
-                ImagePath = p.ImagePath,
-                IsAvailable = p.IsAvailable,
-                Price = p.Price,
-                ProductId = p.ProductId,
-                PublishOn = p.PublishOn,
-                Remarks = p.Remarks,
-            }).ToList();
+                var myListProductItemViewModel = this.MyProducts.Select(p => new ProductItemViewModel
+                {
+                    Description = p.Description,
+                    ImageArray = p.ImageArray,
+                    ImagePath = p.ImagePath,
+                    IsAvailable = p.IsAvailable,
+                    Price = p.Price,
+                    ProductId = p.ProductId,
+                    PublishOn = p.PublishOn,
+                    Remarks = p.Remarks,
+                });
 
-            this.Products = new ObservableCollection<ProductItemViewModel>(
+                this.Products = new ObservableCollection<ProductItemViewModel>(
                     myListProductItemViewModel.OrderBy(p => p.Description));
+            }
+            else
+            {
+                var myListProductItemViewModel = this.MyProducts.Select(p => new ProductItemViewModel
+                {
+                    Description = p.Description,
+                    ImageArray = p.ImageArray,
+                    ImagePath = p.ImagePath,
+                    IsAvailable = p.IsAvailable,
+                    Price = p.Price,
+                    ProductId = p.ProductId,
+                    PublishOn = p.PublishOn,
+                    Remarks = p.Remarks,
+                }).Where(p => p.Description.ToLower().Contains(this.Filter.ToLower())).ToList();
 
-           
+                this.Products = new ObservableCollection<ProductItemViewModel>(
+                    myListProductItemViewModel.OrderBy(p => p.Description));
+            }
         }
 
 
         #endregion
 
         #region Commands    
+
+        public ICommand SearchCommand
+        {
+            get
+            {
+                return new RelayCommand(RefreshList);
+            }
+        }
         public ICommand RefreshCommand
         {
             get

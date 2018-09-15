@@ -223,7 +223,7 @@ namespace Sales.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to You must enter your email..
+        ///   Looks up a localized string similar to Email is required..
         /// </summary>
         public static string EmailValidation {
             get {
@@ -277,7 +277,7 @@ namespace Sales.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Do you forgot your password?.
+        ///   Looks up a localized string similar to Forgot your password?.
         /// </summary>
         public static string Forgot {
             get {
