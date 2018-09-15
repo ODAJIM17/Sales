@@ -5,6 +5,7 @@ namespace Sales.ViewModels
     using GalaSoft.MvvmLight.Command;
     using Sales.Helpers;
     using Services;
+    using System;
     using System.Collections.Generic;
     using System.Collections.ObjectModel;
     using System.Linq;
@@ -22,7 +23,7 @@ namespace Sales.ViewModels
         #endregion
 
         #region Properties
- 
+
         public bool IsRefreshing
         {
             get { return this.isRefreshing; }
@@ -34,11 +35,13 @@ namespace Sales.ViewModels
             get { return this.products; }
             set { this.SetValue(ref this.products, value); }
         }
+        public List<Product> MyProducts { get; set; }
+
 
         #endregion
 
         #region Construtors
-       
+
         public ProductsViewModel()
         {
             instance = this;
@@ -66,7 +69,7 @@ namespace Sales.ViewModels
 
 
         #region Methods
- 
+
         private async void LoadProducts()
         {
             this.IsRefreshing = true;
@@ -86,6 +89,7 @@ namespace Sales.ViewModels
                url,
                 "/api",
                 "/Products");
+
             if (!response.IsSuccess)
             {
                 this.IsRefreshing = false;
@@ -93,8 +97,16 @@ namespace Sales.ViewModels
                 return;
             }
 
-            var list = (List<Product>)response.Result;
-            var myProducts = list.Select(p => new ProductItemViewModel
+            this.MyProducts = (List<Product>)response.Result;
+            this.RefreshList();
+            this.IsRefreshing = false;
+
+
+        }
+
+        public void RefreshList()
+        {
+            var myListProductItemViewModel = MyProducts.Select(p => new ProductItemViewModel
 
             {
                 Description = p.Description,
@@ -107,9 +119,10 @@ namespace Sales.ViewModels
                 Remarks = p.Remarks,
             }).ToList();
 
-            this.Products = new ObservableCollection<ProductItemViewModel>(myProducts);
-            this.IsRefreshing = false;
+            this.Products = new ObservableCollection<ProductItemViewModel>(
+                    myListProductItemViewModel.OrderBy(p => p.Description));
 
+           
         }
 
 
