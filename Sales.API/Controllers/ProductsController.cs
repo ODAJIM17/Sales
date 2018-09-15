@@ -16,6 +16,7 @@ using Sales.Domain.Models;
 
 namespace Sales.API.Controllers
 {
+    [Authorize]
     public class ProductsController : ApiController
     {
         //https://salesapiservices.azurewebsites.net/api/products

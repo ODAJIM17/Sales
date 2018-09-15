@@ -42,9 +42,9 @@
             @Html.DisplayFor(modelItem => item.Remarks)
         </td>
         <td>
-            @if (!string.IsNullOrEmpty(item.ImagePath))
+            @if (!string.IsNullOrEmpty(item.ImageFullPath))
             {
-                <img src="@Url.Content(item.ImagePath)" alt="Image" style="width:100px;height:150px;max-width: 100%; height: auto;" />
+                <img src="@Url.Content(item.ImageFullPath)" alt="Image" style="width:100px;height:150px;max-width: 100%; height: auto;" />
             }
         </td>
         <td>

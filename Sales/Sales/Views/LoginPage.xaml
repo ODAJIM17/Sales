@@ -49,11 +49,10 @@
                     </Entry>
                 </Grid>
                 <StackLayout
-                    Margin="10,0"
+                   
                     Orientation="Horizontal"
-                    VerticalOptions="CenterAndExpand">
-                    <Label
-                        HorizontalOptions="StartAndExpand"
+                    HorizontalOptions="Center">
+                    <Label 
                         Text="{i18n:Translate Rememberme}"
                         VerticalOptions="Center">
                     </Label>
@@ -63,14 +62,14 @@
                     </Switch>
                 </StackLayout>
                 <Label
-                    HorizontalOptions="Center"
+                HorizontalOptions="Center"
                     Text="{i18n:Translate Forgot}"
                     TextColor="Blue"
                     VerticalOptions="CenterAndExpand">
-                    <Label.GestureRecognizers>
-                        <TapGestureRecognizer Command="{Binding ForgotPasswordComand}"/>
-                    </Label.GestureRecognizers>
-                </Label>
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding ForgotPasswordComand}"/>
+                </Label.GestureRecognizers>
+                 </Label>
                 <ActivityIndicator
                     IsRunning="{Binding IsRunning}"
                     VerticalOptions="CenterAndExpand">

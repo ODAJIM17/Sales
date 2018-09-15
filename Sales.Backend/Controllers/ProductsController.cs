@@ -11,6 +11,7 @@ namespace Sales.Backend.Controllers
     using System.Threading.Tasks;
     using System.Web.Mvc;
 
+    [Authorize]
     public class ProductsController : Controller
     {
         private LocalDataContext db = new LocalDataContext();
