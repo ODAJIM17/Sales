@@ -8,6 +8,7 @@ namespace Sales.ViewModels
     using Sales.Common.Models;
     using Sales.Helpers;
     using Sales.Services;
+    using Sales.Views;
     using System.Linq;
     using System.Windows.Input;
     using Xamarin.Forms;
@@ -17,10 +18,15 @@ namespace Sales.ViewModels
         #region Attributes
 
         private Product product;
+
         private MediaFile file;
+
         private ImageSource imageSource;
+
         private ApiService apiService;
+
         private bool isRunning;
+
         private bool isEnabled;
 
         #endregion
@@ -64,6 +70,22 @@ namespace Sales.ViewModels
 
         #region Commands
 
+        //public ICommand EditProductCommand
+        //{
+        //    get
+        //    {
+        //        return new RelayCommand(EditProduct);
+        //    }
+        //}
+
+        //private async void EditProduct()
+        //{
+        //    MainViewModel.GetInstance().EditProduct = new EditProductViewModel(this);
+        //    await Application.Current.MainPage.Navigation.PushAsync(new EditProductPage());
+           
+        //}
+
+
         public ICommand DeleteCommand
         {
             get
@@ -99,7 +121,7 @@ namespace Sales.ViewModels
             var url = Application.Current.Resources["UrlAPI"].ToString();
             var prefix = Application.Current.Resources["UrlPrefix"].ToString();
             var controller = Application.Current.Resources["UrlProductsController"].ToString();
-            var response = await this.apiService.Delete(url, prefix, controller, this.Product.ProductId);
+            var response = await this.apiService.Delete(url, prefix, controller, this.Product.ProductId,Settings.TokenType, Settings.AccessToken);
             if (!response.IsSuccess)
             {
                 this.IsRunning = false;
@@ -231,7 +253,7 @@ namespace Sales.ViewModels
             var url = Application.Current.Resources["UrlAPI"].ToString();
             var prefix = Application.Current.Resources["UrlPrefix"].ToString();
             var controller = Application.Current.Resources["UrlProductsController"].ToString();
-            var response = await this.apiService.Put(url, prefix, controller, this.product, this.product.ProductId);
+            var response = await this.apiService.Put(url, prefix, controller, this.product, this.product.ProductId,Settings.TokenType,Settings.AccessToken);
 
             // the code below also works when adding a new product. just uncomment the url  and the response vars.
             // var url = Application.Current.Resources["UrlAPI"].ToString();

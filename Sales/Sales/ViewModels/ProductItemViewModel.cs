@@ -25,7 +25,7 @@ namespace Sales.ViewModels
         #endregion
 
         #region Commands
-        public ICommand EditCommand
+        public ICommand EditProductCommand
         {
             get
             {

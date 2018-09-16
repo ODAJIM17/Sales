@@ -98,7 +98,9 @@ namespace Sales.ViewModels
             var response = await this.apiService.GetList<Product>(
                url,
                 "/api",
-                "/Products");
+                "/Products",
+                Settings.TokenType,
+                Settings.AccessToken);
 
             if (!response.IsSuccess)
             {

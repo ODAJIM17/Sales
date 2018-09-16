@@ -192,7 +192,7 @@ namespace Sales.ViewModels
             var url = Application.Current.Resources["UrlAPI"].ToString();
             var prefix = Application.Current.Resources["UrlPrefix"].ToString();
             var controller = Application.Current.Resources["UrlProductsController"].ToString();
-            var response = await this.apiService.Post(url, prefix, controller, product);
+            var response = await this.apiService.Post(url, prefix, controller, product,Settings.TokenType,Settings.AccessToken);
 
             // the code below also works when adding a new product. just uncomment the url  and the response vars.
             // var url = Application.Current.Resources["UrlAPI"].ToString();

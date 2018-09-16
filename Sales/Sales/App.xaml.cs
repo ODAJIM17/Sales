@@ -1,3 +1,4 @@
+using Sales.Helpers;
 using Sales.ViewModels;
 using Sales.Views;
 using Xamarin.Forms;
@@ -12,8 +13,16 @@ namespace Sales
 		{
 			InitializeComponent();
 
-            MainViewModel.GetInstance().Login = new LoginViewModel();
-            MainPage = new NavigationPage(new LoginPage());
+            if (Settings.IsRemembered && !string.IsNullOrEmpty(Settings.AccessToken))
+            {
+                MainViewModel.GetInstance().Products = new ProductsViewModel();
+                MainPage = new NavigationPage(new ProductsPage());
+            }
+            else
+            {
+                MainViewModel.GetInstance().Login = new LoginViewModel();
+                MainPage = new NavigationPage(new LoginPage());
+            }
         }
 
         protected override void OnStart ()
