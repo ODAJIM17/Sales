@@ -151,7 +151,7 @@
     <AndroidResource Include="Resources\drawable\twitter_logo.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\no_photo.png" />
+    <AndroidResource Include="Resources\drawable\nouser.png" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\facebook_logo.png" />
